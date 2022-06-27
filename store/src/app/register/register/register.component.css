@@ -1,0 +1,30 @@
+.btnApply {
+    background-color: #6897bb;
+    margin: 30px;
+    width: 100px;
+}
+
+.form {
+    width: 40%;
+    top: 25%;
+    position: absolute;
+}
+
+.container {
+    margin-top: 65px;
+    overflow: hidden;
+    background-position: center;
+    text-align: center;
+    background: url(../../../assets/register4.jpg) no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    min-height: 75vh;
+    height: 100vh;
+    min-width: 100vw;
+    margin: 0;
+}
+
+.text {
+    text-align: end;
+    color: #faab00;
+}

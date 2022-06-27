@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="dx-field">
+        <div class="dx-field-label">{{text}}</div>
+    </div>
+    <dx-data-grid 
+        *ngIf="showGrid" 
+        class="gridOrder"
+        [dataSource]="orders"
+        [remoteOperations]="false"
+        [rowAlternationEnabled]="true"
+        [showBorders]="true"
+        [columnAutoWidth]="true"
+        (onRowPrepared)="onCellPrepared($event)">
+        <dxo-scrolling mode="virtual"></dxo-scrolling>
+        <dxo-load-panel
+            [enabled]="true">
+        </dxo-load-panel>
+        <dxi-column dataField="orderId" dataType="string" caption="Order id"></dxi-column>
+        <dxi-column dataField="orderDate" dataType="date" format="dd.MM.yyyy HH:mm" caption="Order date"></dxi-column>
+        <dxi-column dataField="totalPrice" dataType="number" format="# ₽" caption="Total price"></dxi-column>
+    </dx-data-grid>
+</div>

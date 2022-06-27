@@ -1,0 +1,162 @@
+.info-materials {
+  top: 70px;
+  position: relative;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  float: right;
+  width: calc(100vw - 305px);
+  margin: 5px;
+  background-color: white!important;
+}
+
+.best-title {
+  height: 70px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: lighter;
+  margin-top: 3px;
+  color: #5f3030;
+  font-family: cursive;
+}
+
+.best-materials {
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+::ng-deep .best-materials:after{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+.material
+{
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.album{
+  margin-top: 9px;
+  font-size: 14px;
+  color: #000080;
+}
+
+.image {
+  width: 255px;
+  height: 255px;
+  background-repeat: no-repeat;
+  margin: auto;
+  background-size: contain;
+  background-position: center center;
+}
+
+.description {
+  font-size: 13px;
+  color: #000080;
+}
+
+.artist {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000080;
+}
+
+::ng-deep .material:hover {
+  background-color: #f0f8ff;
+}
+
+::ng-deep .material:focus {
+  background-color: #f0f8ff;
+}
+
+::ng-deep .dx-list-item-icon-container, ::ng-deep .dx-toolbar-before {
+  width: 36px;
+  padding-right: 0px !important;
+  text-align: center;
+}
+
+::ng-deep .dx-list-item-content {
+  padding-left: 10px !important;
+}
+
+::ng-deep .dx-button {
+  background-color: rgba(191, 191, 191, -0.15);
+  border: none;
+
+}
+
+::ng-deep .panel-list .dx-list-item {
+  color: #fff;
+  border-top: 1px solid rgba(221, 221, 221, .2);
+}
+
+::ng-deep .panel-list .dx-list-item .dx-icon {
+  color: #fff !important;
+}
+
+::ng-deep label {
+  font-weight: bold;
+}
+
+::ng-deep .pagination {
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+::ng-deep .page-item.active .page-link {
+  background-color: #6897bb;
+  border-color: #6897bb
+}
+
+::ng-deep .options {
+  padding: 20px;
+  position: relative;
+  float: left;
+  bottom: 0;
+  right: 0;
+  width: 260px;
+  top: 75px;
+  background-color: #ecffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  margin-right: 8px;
+  min-height: calc(100vh - 70px);
+  overflow-y: scroll;
+}
+::ng-deep .caption {
+  font-size: 18px;
+  font-weight: 500;
+}
+::ng-deep .option {
+  margin-top: 10px;
+}
+
+.check {
+  margin: 4px;
+}
+
+.btnApply {
+  background-color: #f8543e;
+  margin: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.highlightText {
+  background-color: yellow;
+  top:100px;
+}

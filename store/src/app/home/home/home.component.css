@@ -1,0 +1,18 @@
+.homeImg {
+  margin-top: 65px;
+  overflow: hidden;
+  background: url(../../../assets/record5.jpg) no-repeat;
+  background-size: cover;
+  min-height: 75vh;
+  height: calc(100vh - 65px);
+  width: 100vw;
+ }
+ .label{
+  text-align: center;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+  top: 300px;
+  color: rgb(255, 255, 255);
+  width: 100%;
+ }

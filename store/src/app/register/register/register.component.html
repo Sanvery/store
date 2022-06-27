@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="form">
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label text">Логин*:</div>
+                <div class="dx-field-value">
+                    <dx-text-box placeholder="Enter username..." [showClearButton]="true" [(value)]="username" (onEnterKey)="onEnterKey()"></dx-text-box>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label text">Пароль*:</div>
+                <div class="dx-field-value">
+                    <dx-text-box placeholder="Enter password..." mode="password" [showClearButton]="true" [(value)]="password" (onEnterKey)="onEnterKey()"></dx-text-box>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label text">Повторите пароль*:</div>
+                <div class="dx-field-value">
+                    <dx-text-box placeholder="Confirm password..." mode="password" [showClearButton]="true" [(value)]="confirmPassword" (onEnterKey)="onEnterKey()"></dx-text-box>
+                </div>
+            </div>
+            <dx-button class="btnApply" text="Создать" type="default" stylingMode="contained" (onClick)="onAccountCreate()"></dx-button>
+        </div>
+    </div>
+</div>

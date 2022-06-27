@@ -1,0 +1,66 @@
+/*расположение шапки*/
+::ng-deep .dx-tabs.dx-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/*форматирование на вкладке*/
+::ng-deep .dx-nav-item {
+  background-color: #5f3030;
+  vertical-align: middle;
+  color: white;
+}
+
+/*текст вкладки*/
+::ng-deep .dx-nav-item .dx-tab-text {
+  color: white;
+  font-family: Corbel;
+}
+
+/*при наведении мышки*/
+::ng-deep .dx-tab:hover {
+  background-color: #aec4d4;
+}
+
+/*форматирование при выборе вкладки*/
+::ng-deep .dx-nav-item.dx-tab-selected {
+  background-color: #aec4d4;
+}
+
+/*текст при выборе*/
+::ng-deep .dx-nav-item.dx-tab-selected .dx-tab-text {
+    color: white;
+}
+
+/*иконки*/
+::ng-deep .dx-icon-hidepanel:before, ::ng-deep .dx-icon-cart:before {
+  color: white;
+  font-size: 27px;
+}
+
+::ng-deep .dx-nav-item.dx-state-focused {
+    box-shadow: none;
+}
+
+::ng-deep .dx-viewport {
+    /*прокрутка*/
+    overflow-x: hidden;
+}
+
+::ng-deep .dx-placeholder {
+  font-style: italic;
+}
+
+.btnApply {
+  background-color: #6897bb;
+  margin: 10px;
+  width: 105px;
+}
+
+.btnApply2 {
+  background-color: #6897bb;
+  margin: 10px;
+  width: 130px;
+}

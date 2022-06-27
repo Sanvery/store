@@ -1,0 +1,36 @@
+::ng-deep .dx-datagrid {
+    top: 90px;
+    float: left;
+}
+
+.btnApply {
+    background-color: #6897bb;
+    margin: 10px;
+    position: relative;
+    float: right;
+    top: 90px;
+}
+
+.container {
+    top: 70px;
+    height: 100%;
+    max-width: 100%;
+}
+
+::ng-deep .dx-field-label{
+    text-align: left;
+    font-size: 22px;
+    margin-top: 3px;
+    color: #6897bb;
+    position: relative;
+    margin: 10px;
+    top: 85px;
+}
+
+.number-box {
+    float: right;
+}
+
+::ng-deep .dx-datagrid-content .dx-datagrid-table .dx-row > td {
+    vertical-align: middle!important;
+}

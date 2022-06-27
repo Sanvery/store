@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="dx-field-label">Сведения о корзине покупок</div>
+    <dx-button class="btnApply" text="Очистить" type="default" stylingMode="contained" (onClick)="onClearCartClicked()"></dx-button>
+    <dx-data-grid id="gridContainer"
+        [dataSource]="cartData"
+        [remoteOperations]="false"
+        [rowAlternationEnabled]="true"
+        [showBorders]="true"
+        [columnAutoWidth]="true"
+        (onRowUpdated)="onRowUpdated($event)"
+        (onRowRemoved)="onRowRemoved($event)">
+        <dxo-load-panel
+            [enabled]="true">
+        </dxo-load-panel>
+        <dxo-pager
+            [showPageSizeSelector]="true"
+            [showNavigationButtons]="true"
+        ></dxo-pager>
+        <dxo-editing
+            mode="cell"
+            [allowUpdating]="true"
+            [allowDeleting]="true">
+        </dxo-editing>
+        <dxi-column dataField="vNameBuildingMaterial" dataType="string" caption="BuildingMaterial" [allowEditing]="false"></dxi-column>
+        <dxi-column dataField="vPrice" caption="Price" dataType="number" format="# ₽" alignment="right" [allowEditing]="false"></dxi-column>
+        <dxi-column dataField="quantity" dataType="number" caption="Quantity" [editorOptions]="{ min: '1', showSpinButtons: true }" [setCellValue]="onQuantityChanged"></dxi-column>
+        <dxi-column dataField="total" dataType="number" caption="Amount" format="# ₽" alignment="right" [allowEditing]="false"></dxi-column>
+        <dxo-summary>
+            <dxi-total-item
+                column="vNameBuildingMaterial"
+                summaryType="count">
+            </dxi-total-item>
+            <dxi-total-item
+                column="total"
+                summaryType="sum"
+                valueFormat="#0 ₽">
+            </dxi-total-item>
+        </dxo-summary>
+    </dx-data-grid>
+    <dx-button *ngIf="showButton" class="btnApply" text="Сделать заказ" type="default" stylingMode="contained" (onClick)="onCreateOrderClicked($event)"></dx-button>
+</div>

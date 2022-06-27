@@ -1,0 +1,67 @@
+<div class="options">
+    <div class="caption">Фильтры</div>
+        <div class="option">
+            <div>Количество: {{ foundElementsCount }}</div>
+        </div>
+    <div class="option">
+        <dx-text-box
+            placeholder="Search for..." [(ngModel)]="searchText"
+            valueChangeEvent="keyup"
+            (onValueChanged)="textBoxValueChange($event)">
+        </dx-text-box>
+    </div>
+    <div class="option">
+        <div>Цена</div>
+        <dx-range-selector id="range-selector"
+            [dataSource]="materials"
+            dataSourceField="vPrice"
+            (onValueChanged)="onValueChanged($event)">
+            <dxo-margin [top]="45"></dxo-margin>
+            <dxo-scale [minorTickInterval]="500">
+                <dxo-label format="decimal"></dxo-label>
+            </dxo-scale>
+            <dxo-behavior callValueChanged="onMoving"></dxo-behavior>
+        </dx-range-selector>
+    </div>
+    <div class="option">
+        <div>Каталог</div>
+        <dx-list name="countriesFilter"
+            [items]="countriesFilter"
+            [showSelectionControls]="true"
+            selectionMode="all"
+            [(selectedItems)]="selectedCountries">
+        </dx-list>
+    </div>
+    <div class="option">
+        <div>Бренд</div>
+        <dx-list name="stylesFilter"
+            [items]="stylesFilter"
+            [showSelectionControls]="true"
+            selectionMode="all"
+            [(selectedItems)]="selectedStyles">
+        </dx-list>
+    </div>
+    <div class="buttons">
+        <dx-button class="btnApply" text="Показать" type="default" stylingMode="contained" (onClick)="onApplyClicked()"></dx-button>
+        <dx-button class="btnApply" text="Сбросить" type="default" stylingMode="contained" (onClick)="onResetClicked()"></dx-button>
+    </div>
+</div>
+
+<div class="info-materials">
+    <div class="content">
+        <div class="best-title">Строительные материалы</div>
+        <div class="best-materials" id="materials" align="center">
+            <div class="material" tabindex="0" *ngFor="let material of pageOfItems">
+                <div class="image" [ngStyle]="{'background-image':'url(\'assets/records/' + material.vImage +'.jpg\')'}"></div>
+                <div class="NameBuilding" ngxTextHighlight [content]="material.vNameBuildingMaterial" [searchTerm]="searchText">{{material.vNameBuildingMaterial}}</div>
+                <div class="description" ngxTextHighlight [content]="material.vCatalog" [searchTerm]="searchText"  style="display: inline">{{material.vCatalog}}</div>,
+                <div class="description" ngxTextHighlight [content]="material.vBrand" [searchTerm]="searchText">{{material.vBrand}}</div>
+                <div class="description">{{material.vPrice | currency:'RUB':'symbol-narrow'}}</div>
+                <dx-button class="btnApply" text="Add to cart" type="default" stylingMode="contained" (onClick)="onAddToCartClicked(material)"></dx-button>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="selectedMaterials" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+</div>

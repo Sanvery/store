@@ -1,0 +1,33 @@
+<dx-nav-bar height="60px" (onItemClick)="selectionChanged($event)">
+    <dxi-item text="О КОМПАНИИ"></dxi-item>
+    <dxi-item text="КАТАЛОГ"></dxi-item>
+    <dxi-item text="ЗАКАЗЫ"></dxi-item>
+    <dxi-item disabled="true"></dxi-item>
+    <dxi-item disabled="true"></dxi-item>
+    <dxi-item text="КОРЗИНА"></dxi-item>
+    <dxi-item text="{{username}}" icon="hidepanel"></dxi-item>
+</dx-nav-bar>
+<dx-popup
+  [width]="350"
+  [height]="150"
+  [showTitle]="true"
+  title="Войти"
+  [dragEnabled]="false"
+  [closeOnOutsideClick]="true"
+  [(visible)]="popupVisible">
+  <dx-button class="btnApply2" text="Авторизация" type="default" stylingMode="contained" (onClick)="onLoginClicked()"></dx-button>
+  <dx-button class="btnApply2" text="Регистрация" type="default" stylingMode="contained" (onClick)="onRegisterClicked()" style="float: right;"></dx-button>
+</dx-popup>
+<dx-popup
+  [width]="300"
+  [height]="170"
+  [showTitle]="true"
+  title="Выйти"
+  [dragEnabled]="false"
+  [closeOnOutsideClick]="true"
+  [(visible)]="popupVisibleOut">
+  <p>Вы действительно хотите выйти?</p>
+  <dx-button class="btnApply" text="Да" type="default" stylingMode="contained" (onClick)="LogOutYes()"></dx-button>
+  <dx-button class="btnApply" text="Нет" type="default" stylingMode="contained" (onClick)="LogOutNo()" style="float: right;"></dx-button>
+</dx-popup>
+<router-outlet></router-outlet>
